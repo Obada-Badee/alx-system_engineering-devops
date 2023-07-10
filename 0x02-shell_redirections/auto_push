@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "permissions"
+git commit -m "0x02 I/O redirection and filters"
 git push
