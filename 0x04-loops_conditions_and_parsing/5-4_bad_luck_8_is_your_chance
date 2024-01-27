@@ -7,11 +7,9 @@ do
 	i=$((i+1))
 	if [ $i -eq 4 ]; then
 		echo "bad luck"
-		continue
-	fi
-	if [ $i -eq 8 ]; then
+	elif [ $i -eq 8 ]; then
                 echo "bad luck"
-                continue
-        fi
+	else
 	echo "Best School"
+	fi
 done
