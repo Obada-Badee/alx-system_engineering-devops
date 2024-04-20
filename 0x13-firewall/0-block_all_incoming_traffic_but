@@ -1,0 +1,6 @@
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow http
+ufw allow https
+ufw allow ssh
+ufw enable
