@@ -50,6 +50,10 @@ server {
                 alias /data/web_static/current/;
         }
 
+        location /redirect_me {
+                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+
         error_page 404 /404.html;
 
         location /404.html {
@@ -63,18 +67,13 @@ server {
                 proxy_pass http://localhost:5000/airbnb-onepage/;
         }
 
-        location /redirect_me {
-                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-        }
-
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-                add_header  X-Served-By  "477850-web-01" always;
+                try_files $uri $uri/ /404.html;
         }
-	
-	# pass PHP scripts to FastCGI server
+
+        # pass PHP scripts to FastCGI server
         #
         #location ~ \.php$ {
         #       include snippets/fastcgi-php.conf;
